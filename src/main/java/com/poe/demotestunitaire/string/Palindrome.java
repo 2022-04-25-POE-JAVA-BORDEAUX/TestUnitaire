@@ -8,7 +8,7 @@ public class Palindrome {
     // kayak : true
     // bonjour : false
     
-    public boolean isPalindrome(String phrase){
+    public static boolean isPalindrome(String phrase){
         
         phrase = phrase.toLowerCase();
         phrase = phrase.replaceAll(" ", "");

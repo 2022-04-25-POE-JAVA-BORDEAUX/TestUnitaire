@@ -2,24 +2,22 @@ package com.poe.demotestunitaire.string;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeAll;
 
 
 public class PalindromeTest {
     
+    
     @Test
     public void isPalindromeKayak() {
-        Palindrome palindrome = new Palindrome();
-        
-        boolean result = palindrome.isPalindrome("kayak");
+        boolean result = Palindrome.isPalindrome("kayak");
         
         assertTrue(result);
     }
     
     @Test
     public void isPalindromeBonjour() {
-        Palindrome palindrome = new Palindrome();
-        
-        boolean result = palindrome.isPalindrome("bonjour");
+        boolean result = Palindrome.isPalindrome("bonjour");
         
         assertFalse(result);
     }
@@ -27,9 +25,7 @@ public class PalindromeTest {
         
     @Test
     public void isPalindromeChaineVide() {
-        Palindrome palindrome = new Palindrome();
-        
-        boolean result = palindrome.isPalindrome("");
+        boolean result = Palindrome.isPalindrome("");
         
         assertTrue(result);
     }
@@ -37,18 +33,14 @@ public class PalindromeTest {
         
     @Test
     public void isPalindromeKAYak() {
-        Palindrome palindrome = new Palindrome();
-        
-        boolean result = palindrome.isPalindrome("KAYak");
+        boolean result = Palindrome.isPalindrome("KAYak");
         
         assertTrue(result);
     }
     
     @Test
     public void isPalindromeAvecEspaces() {
-        Palindrome palindrome = new Palindrome();
-        
-        boolean result = palindrome.isPalindrome("Engage le jeu que je le gagne");
+        boolean result = Palindrome.isPalindrome("Engage le jeu que je le gagne");
         
         assertTrue(result);
     }
@@ -56,9 +48,7 @@ public class PalindromeTest {
         
     @Test
     public void isPalindromeAvecDesAccents() {
-        Palindrome palindrome = new Palindrome();
-        
-        boolean result = palindrome.isPalindrome("La mariée ira mal");
+        boolean result = Palindrome.isPalindrome("La mariée ira mal");
         
         assertTrue(result);
     }
