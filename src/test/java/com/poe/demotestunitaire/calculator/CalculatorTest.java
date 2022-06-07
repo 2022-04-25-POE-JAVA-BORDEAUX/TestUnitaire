@@ -23,4 +23,14 @@ public class CalculatorTest {
         
         assertEquals(3, result);
     }
+    
+    
+    @Test
+    public void testAdd0plus0retourne0() {
+        Calculator calculator = new Calculator();
+        
+        int result = calculator.add(0, 0);
+        
+        assertEquals(0, result);
+    }
 }
