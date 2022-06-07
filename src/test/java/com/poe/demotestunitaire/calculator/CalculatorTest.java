@@ -51,4 +51,42 @@ public class CalculatorTest {
         
         assertTrue(result == 15000);
     }
+    
+    @Test
+    public void testDeuxObjets() {
+        Calculator c1 = new Calculator();
+        Calculator c2 = new Calculator();
+        
+        c1 = c2;
+        
+        assertSame(c1, c2);
+    }
+    
+    @Test
+    public void testMaxBetweenOneAndTwo()
+    {
+        Calculator calculator = new Calculator();
+        
+        int result = calculator.max(1, 2);
+        
+        assertEquals(2, result);
+    }
+    @Test
+    public void testMaxBetweenMinusOneAndMinusTwo()
+    {
+        Calculator calculator = new Calculator();
+        
+        int result = calculator.max(-1, -2);
+        
+        assertEquals(-1, result);
+    }
+    @Test
+    public void testMaxBetweenSamesValues(){
+        Calculator calculator = new Calculator();
+        
+        int result = calculator.max(2, 2);
+        
+        assertEquals(2, result);   
+    }
+    
 }
