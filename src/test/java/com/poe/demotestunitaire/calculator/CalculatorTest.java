@@ -33,4 +33,13 @@ public class CalculatorTest {
         
         assertEquals(0, result);
     }
+    
+    @Test
+    public void testAddMoinsCinqAndMoins4retourneMoinsNeuf() {
+        Calculator calculator = new Calculator();
+        
+        int result = calculator.add(-5, -4);
+        
+        assertEquals(-9, result);
+    }
 }
