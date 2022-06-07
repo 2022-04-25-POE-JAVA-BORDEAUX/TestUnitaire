@@ -11,4 +11,8 @@ public class Calculator {
         return a > b ? a : b;
     }
     
+    public int divide(int dividende, int diviseur){
+        return dividende/diviseur;
+    }
+    
 }
