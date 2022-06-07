@@ -42,4 +42,13 @@ public class CalculatorTest {
         
         assertEquals(-9, result);
     }
+    
+    @Test
+    public void testGrandNombres() {
+         Calculator calculator = new Calculator();
+        
+        int result = calculator.add(5000, 10000);
+        
+        assertTrue(result == 15000);
+    }
 }
