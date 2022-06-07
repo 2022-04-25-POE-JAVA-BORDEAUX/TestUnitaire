@@ -81,7 +81,7 @@ public class CalculatorTest {
         assertEquals(-1, result);
     }
     @Test
-    public void testMaxBetweenSamesValues(){
+    public void testMaxBetweenSameValues(){
         Calculator calculator = new Calculator();
         
         int result = calculator.max(2, 2);
