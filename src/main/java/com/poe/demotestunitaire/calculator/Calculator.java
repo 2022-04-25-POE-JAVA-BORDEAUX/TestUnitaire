@@ -18,6 +18,15 @@ public class Calculator {
         
         return dividende/diviseur;
     }
+    
+    public ArrayList<Integer> getNombresImpairs(int max){
+        
+        ArrayList<Integer> result = new ArrayList<>();
+        
+        // à compléter...
+        
+        return result;
+    }
 
     
 }
