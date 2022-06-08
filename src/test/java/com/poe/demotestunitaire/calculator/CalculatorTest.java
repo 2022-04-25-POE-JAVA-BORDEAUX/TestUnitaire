@@ -1,5 +1,7 @@
 package com.poe.demotestunitaire.calculator;
 
+import java.util.List;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -106,15 +108,14 @@ public class CalculatorTest {
         
         assertEquals(10/3, result);
     }
-//    @Test
-//    public void testDivideWithDividerAsZero(){
-//        Calculator calculator = new Calculator();
-//        
-//        int result = calculator.divide(10, 0);
-//        System.out.println(result);
-//        
-//       // assertThrows(ArithmeticException.class, () -> { calculator.divide(10,0); } );
-//    }
     
-    
+    @Test
+    public void testDivideWithDividerAsZero(){
+        Calculator calculator = new Calculator();
+        
+        assertThrows( ArithmeticException.class , () -> {
+             calculator.divide(10, 0);
+        });
+       
+    }
 }

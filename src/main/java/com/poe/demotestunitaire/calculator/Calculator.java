@@ -1,5 +1,8 @@
 package com.poe.demotestunitaire.calculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Calculator {
     
@@ -12,7 +15,9 @@ public class Calculator {
     }
     
     public int divide(int dividende, int diviseur){
+        
         return dividende/diviseur;
     }
+
     
 }
