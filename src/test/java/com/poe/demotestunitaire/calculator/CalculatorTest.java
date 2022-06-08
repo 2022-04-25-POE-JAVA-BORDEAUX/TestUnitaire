@@ -1,7 +1,7 @@
 package com.poe.demotestunitaire.calculator;
 
-import java.util.List;
-import org.junit.jupiter.api.Assertions;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -121,7 +121,19 @@ public class CalculatorTest {
     
     @Test
     public void testGetNombresImpairs() {
+        Calculator calculator = new Calculator();
         
-        assertTrue(false);
+        ArrayList<Integer> result = calculator.getNombresImpairs(5);
+        
+        assertEquals(3, result.size());
+        
+        assertTrue(result.contains(3));
+        assertFalse(result.contains(2));
+        
+        assertTrue(result.containsAll(Arrays.asList(1, 3, 5)));
+        
+        ArrayList<Integer> target = new ArrayList<>();
+        target.addAll(Arrays.asList(1, 3, 5));
+        assertEquals(result.toString(), target.toString());
     }
 }

@@ -19,11 +19,16 @@ public class Calculator {
         return dividende/diviseur;
     }
     
+    // getOddNumbers()
+    // odd = impairs = bizarre
     public ArrayList<Integer> getNombresImpairs(int max){
         
         ArrayList<Integer> result = new ArrayList<>();
         
-        // à compléter...
+        for(int i=0 ; i <= max ; i++) {
+            if(i % 2 != 0)
+                result.add(i);
+        }
         
         return result;
     }
