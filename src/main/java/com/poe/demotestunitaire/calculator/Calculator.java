@@ -6,22 +6,22 @@ import java.util.List;
 
 public class Calculator {
     
-    public int add(int a, int b){
+    public static int add(int a, int b){
         return a + b;
     }
     
-    public int max(int a, int b){
+    public static int max(int a, int b){
         return a > b ? a : b;
     }
     
-    public int divide(int dividende, int diviseur){
+    public static int divide(int dividende, int diviseur){
         
         return dividende/diviseur;
     }
     
     // getOddNumbers()
     // odd = impairs = bizarre
-    public ArrayList<Integer> getNombresImpairs(int max){
+    public static ArrayList<Integer> getNombresImpairs(int max){
         
         ArrayList<Integer> result = new ArrayList<>();
         

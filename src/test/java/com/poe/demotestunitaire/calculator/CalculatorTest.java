@@ -12,17 +12,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 public class CalculatorTest {
     
-    static Calculator calculator;
-    
-    @BeforeAll
-    public static void setup(){
-       calculator = new Calculator();
-    }
-    
     @Test
     public void testAdd3plus2retourne5() {
         
-        int result = calculator.add(3, 2);
+        int result = Calculator.add(3, 2);
         
         assertEquals(5, result);
     }
@@ -30,7 +23,7 @@ public class CalculatorTest {
     @Test
     public void testAdd2plus1retourne3() {
         
-        int result = calculator.add(2, 1);
+        int result = Calculator.add(2, 1);
         
         assertEquals(3, result);
     }
@@ -38,21 +31,21 @@ public class CalculatorTest {
     
     @Test
     public void testAdd0plus0retourne0() {
-        int result = calculator.add(0, 0);
+        int result = Calculator.add(0, 0);
         
         assertEquals(0, result);
     }
     
     @Test
     public void testAddMoinsCinqAndMoins4retourneMoinsNeuf() {
-        int result = calculator.add(-5, -4);
+        int result = Calculator.add(-5, -4);
         
         assertEquals(-9, result);
     }
     
     @Test
     public void testGrandNombres() {        
-        int result = calculator.add(5000, 10000);
+        int result = Calculator.add(5000, 10000);
         
         assertTrue(result == 15000);
     }
@@ -70,33 +63,33 @@ public class CalculatorTest {
     @Test
     public void testMaxBetweenOneAndTwo()
     {
-        int result = calculator.max(1, 2);
+        int result = Calculator.max(1, 2);
         
         assertEquals(2, result);
     }
     @Test
     public void testMaxBetweenMinusOneAndMinusTwo()
     {
-        int result = calculator.max(-1, -2);
+        int result = Calculator.max(-1, -2);
         
         assertEquals(-1, result);
     }
     @Test
     public void testMaxBetweenSameValues(){
-        int result = calculator.max(2, 2);
+        int result = Calculator.max(2, 2);
         
         assertEquals(2, result);   
     }
     
     @Test
     public void testDivideWithIntResult(){
-        int result = calculator.divide(10, 5);
+        int result = Calculator.divide(10, 5);
         
         assertEquals(2, result);        
     }
     @Test
     public void testDivideWithFloatResult(){
-        int result = calculator.divide(10, 3);
+        int result = Calculator.divide(10, 3);
         System.out.println(result);
         
         assertEquals(10/3, result);
@@ -105,14 +98,14 @@ public class CalculatorTest {
     @Test
     public void testDivideWithDividerAsZero(){
         assertThrows( ArithmeticException.class , () -> {
-             calculator.divide(10, 0);
+             Calculator.divide(10, 0);
         });
        
     }
     
     @Test
     public void testGetNombresImpairs() {
-        ArrayList<Integer> result = calculator.getNombresImpairs(5);
+        ArrayList<Integer> result = Calculator.getNombresImpairs(5);
         
         assertEquals(3, result.size());
         
@@ -149,6 +142,6 @@ public class CalculatorTest {
     @ParameterizedTest
     @CsvSource({"1, 1, 1", "1, 2, 2", "5, 3, 5", "-1, -4, -1"})
     void testMaxAvecJeuDeDonnees(int a, int b, int result) {
-        assertEquals(result, calculator.max(a, b));
+        assertEquals(result, Calculator.max(a, b));
     }
 }
