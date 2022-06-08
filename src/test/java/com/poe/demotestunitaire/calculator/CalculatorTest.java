@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 public class CalculatorTest {
@@ -135,5 +138,33 @@ public class CalculatorTest {
         ArrayList<Integer> target = new ArrayList<>();
         target.addAll(Arrays.asList(1, 3, 5));
         assertEquals(result.toString(), target.toString());
+    }
+    
+    //EXEMPLES avec des PARAMS
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3, 4})
+    void testParametreAvecValueSource(int valeur) {
+        assertEquals(valeur + valeur, valeur * 2);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"1, 1", "1, 2", "2, 3"})
+    void testAdditioner(int a, int b) {
+        int attendu = a + b;
+        assertEquals(attendu, a + b);
+    }
+    
+    @ParameterizedTest
+    @CsvSource({"1, 1, 2", "1, 2, 3", "2, 3, 5"})
+    void testAdditionerAvecResultat(int a, int b, int result) {
+        assertEquals(result, a + b);
+    }
+        
+    @ParameterizedTest
+    @CsvSource({"1, 1, 1", "1, 2, 2", "5, 3, 5", "-1, -4, -1"})
+    void testMaxAvecJeuDeDonnees(int a, int b, int result) {
+        Calculator calculator = new Calculator();
+        
+        assertEquals(result, calculator.max(a, b));
     }
 }
