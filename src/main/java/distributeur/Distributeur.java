@@ -33,11 +33,14 @@ public class Distributeur {
     }
     
     public void commanderProduit(int idProduit){
-                
-        Produit produit = getProduit(idProduit);
-                
-        produit.setQuantite(produit.getQuantite()-1);
-        credit = credit - produit.getPrix(); 
+        // Ces tests sont ils redondants ? 
+        // puisque on les a deja exécutés une premiere fois
+        if(stockSuffisant(idProduit, 1) && creditSuffisant(idProduit, 1)){
+            Produit produit = getProduit(idProduit);
+
+            produit.setQuantite(produit.getQuantite()-1);
+            credit = credit - produit.getPrix(); 
+        }
     }
     
     public void recupererArgentRestant() {
