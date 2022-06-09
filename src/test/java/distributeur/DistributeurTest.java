@@ -15,4 +15,14 @@ public class DistributeurTest {
         assertEquals(3, distributeur.getStock().size());
     }
     
+    @Test
+    public void testInsererArgent() {
+        
+        Distributeur distributeur = new Distributeur();
+        int montantInitial = distributeur.getCredit();
+        distributeur.insererArgent(5);
+        
+        assertEquals(montantInitial+5, distributeur.getCredit());
+    }
+    
 }

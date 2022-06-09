@@ -7,6 +7,10 @@ public class Distributeur {
     private int credit; // argent dispo pour acheter
     private ArrayList<Produit> stock = new ArrayList<>();
     
+    public Distributeur(){
+        credit = 0;
+    }
+    
     public void remplirLeStock() {
         stock.add(new Produit("café", 1, 5));
         stock.add(new Produit("soda", 2, 5));
@@ -14,7 +18,7 @@ public class Distributeur {
     }
     
     public void insererArgent(int montant){
-        
+        credit += montant;
     }
     
     public void commanderProduit(int indexProduit){
