@@ -24,5 +24,17 @@ public class DistributeurTest {
         
         assertEquals(montantInitial+5, distributeur.getCredit());
     }
+ 
     
+    @Test
+    public void testCommanderProduit(){
+        Distributeur distributeur = new Distributeur();
+        distributeur.remplirLeStock();
+        distributeur.insererArgent(5);
+        
+        distributeur.commanderProduit(1);
+        
+        assertEquals(4, distributeur.getCredit());
+        assertEquals(4, distributeur.getProduit(1).getQuantite());
+    } 
 }

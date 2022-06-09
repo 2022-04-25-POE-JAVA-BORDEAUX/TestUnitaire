@@ -2,6 +2,7 @@ package distributeur;
 
 public class Produit {
     
+    private int id;
     private String nom;
     private int prix;
     private int quantite;
@@ -10,7 +11,8 @@ public class Produit {
        
     }
         
-    public Produit(String nom, int prix, int quantite) {
+    public Produit(int id, String nom, int prix, int quantite) {
+        this.id = id;
         this.nom = nom;
         this.prix = prix;
         this.quantite = quantite;
@@ -42,10 +44,22 @@ public class Produit {
         this.quantite = quantite;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Produit{" + "nom=" + nom + ", prix=" + prix + ", quantite=" + quantite + '}';
+        return "Produit{" + "id=" + id + ", nom=" + nom + ", prix=" + prix + ", quantite=" + quantite + '}';
     }
+    
+    
+
+
     
     
 }
