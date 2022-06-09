@@ -21,19 +21,23 @@ public class Distributeur {
         credit += montant;
     }
     
-    public void commanderProduit(int id){
+    public boolean stockSuffisant(int idProduit, int quantiteAAcheter){
+        Produit produit = getProduit(idProduit);
+        return produit.getQuantite() >= quantiteAAcheter;
+    }
+    
+    public boolean creditSuffisant(int idProduit, int quantiteAAcheter){     
+        Produit produit = getProduit(idProduit);
+        int cout = quantiteAAcheter * produit.getPrix();
+        return credit >= cout;
+    }
+    
+    public void commanderProduit(int idProduit){
                 
-        for(Produit produit: stock){
-            if(produit.getId() == id){
+        Produit produit = getProduit(idProduit);
                 
-                if(credit >= produit.getPrix() && produit.getQuantite()>=1){
-                    produit.setQuantite(produit.getQuantite()-1);
-                    credit = credit - produit.getPrix();
-                }
-            }
-        }
-        
-       
+        produit.setQuantite(produit.getQuantite()-1);
+        credit = credit - produit.getPrix(); 
     }
     
     public void recupererArgentRestant() {

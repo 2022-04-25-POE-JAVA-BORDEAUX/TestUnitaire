@@ -38,7 +38,16 @@ public class ApplicationDistributeurConsole {
                                 +produit.getQuantite()+" ]");
                     }
                     int produitId = clavier.nextInt();
-                    distributeur.commanderProduit(produitId);
+                    
+                    if(! distributeur.creditSuffisant(produitId, 1)){
+                        System.out.println("Veuillez insérer de l'argent");
+                    } else {
+                        if(! distributeur.stockSuffisant(produitId, 1)){
+                            System.out.println("Stock insuffisant");
+                        } else {
+                            distributeur.commanderProduit(produitId);
+                        }
+                    }
                     
                     break;
                 case 3:
